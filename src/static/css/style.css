@@ -1,0 +1,189 @@
+/* Main container adjustments */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Chat container */
+[data-testid="stVerticalBlock"] > [data-testid="stVerticalBlock"] {
+    gap: 0;
+}
+
+/* Message styling */
+.message-container {
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+    align-items: flex-start;
+}
+
+.user-message {
+    background-color: #343541;
+    border-bottom: 1px solid #4A4B53;
+}
+
+.assistant-message {
+    background-color: #444654;
+    border-bottom: 1px solid #4A4B53;
+}
+
+/* Avatar styling */
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.user-avatar {
+    background-color: #5B5C63;
+    color: #ECECF1;
+}
+
+.assistant-avatar {
+    background-color: #10A37F;
+    color: white;
+}
+
+/* Message text */
+.message-text {
+    flex-grow: 1;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Input styling */
+.stTextInput {
+    position: fixed;
+    bottom: 0;
+    left: calc(50% + 110px);  /* Account for half of sidebar width */
+    transform: translateX(-50%);
+    width: 800px;
+    max-width: calc(100% - 260px);  /* Account for sidebar width */
+    background: #343541;
+    padding: 1rem;
+    border-top: 1px solid #4A4B53;
+    z-index: 1000;
+}
+
+/* Adjust input position when sidebar is collapsed */
+[data-testid="collapsedControl"] ~ div .stTextInput {
+    left: 50%;
+    max-width: calc(100% - 40px);
+}
+
+/* Ensure input stays within bounds */
+@media (max-width: 1200px) {
+    .stTextInput {
+        width: calc(100% - 260px);  /* Account for sidebar */
+        left: calc(50% + 110px);
+    }
+    
+    [data-testid="collapsedControl"] ~ div .stTextInput {
+        width: calc(100% - 40px);
+        left: 50%;
+    }
+}
+
+/* Sidebar input styling */
+[data-testid="stSidebar"] .stTextInput {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-top: none !important;
+    z-index: 1 !important;
+}
+
+/* Input box styling */
+.stTextInput > div > div > input {
+    background-color: #40414F !important;
+    border: 1px solid #4A4B53 !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    color: #ECECF1 !important;
+    font-size: 16px !important;
+    width: 100% !important;
+}
+
+/* Chat container adjustments */
+.chat-container {
+    margin-left: 110px;  /* Half of sidebar width */
+    margin-right: 0;
+    padding-bottom: 120px;  /* Space for input */
+}
+
+/* Adjust chat container when sidebar is collapsed */
+[data-testid="collapsedControl"] ~ div .chat-container {
+    margin-left: 0;
+}
+
+/* App background */
+.stApp {
+    background-color: #343541;
+    color: #ECECF1;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #202123;
+    border-right: 1px solid #4A4B53;
+}
+
+/* Hide default Streamlit elements */
+footer {
+    display: none !important;
+}
+
+header {
+    display: none !important;
+}
+
+/* Welcome container */
+.welcome-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Features container */
+.features-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* File uploader styling */
+.stFileUploader {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #2C2D3A;
+}
+
+/* Button styling */
+.stButton > button {
+    background-color: #10A37F !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+}
+
+.stButton > button:hover {
+    background-color: #0D8C6D !important;
+} 
